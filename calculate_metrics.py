@@ -53,22 +53,22 @@ def calculate_metrics(clf, y_test, x_test):
 
 
 def plot_feature_importance(importance,names,model_type):
-    #Create arrays from feature importance and feature names
+    # Create arrays from feature importance and feature names
     feature_importance = np.array(importance)
     feature_names = np.array(names)
 
-    #Create a DataFrame using a Dictionary
+    # Create a DataFrame using a Dictionary
     data={'feature_names':feature_names,'feature_importance':feature_importance}
     fi_df = pd.DataFrame(data)
 
-    #Sort the DataFrame in order decreasing feature importance
+    # Sort the DataFrame in order decreasing feature importance
     fi_df.sort_values(by=['feature_importance'], ascending=False,inplace=True)
 
-    #Define size of bar plot
+    # Define size of bar plot
     plt.figure(figsize=(10,8))
-    #Plot Searborn bar chart
+    # Plot Searborn bar chart
     sns.barplot(x=fi_df['feature_importance'], y=fi_df['feature_names'])
-    #Add chart labels
+    # Add chart labels
     plt.title(model_type + 'FEATURE IMPORTANCE')
     plt.xlabel('FEATURE IMPORTANCE')
     plt.ylabel('FEATURE NAMES')
