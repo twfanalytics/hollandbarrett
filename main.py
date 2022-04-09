@@ -23,6 +23,8 @@ dataset = 'hollandbarrett'
 column_dropped = ['OCH_ID', 'Y', 'date', 'week_number', 'year', 'quarter']
 date = str(date.today()).replace('-', '_')
 
+# TEST
+
 # Cross validation hyperparameter distribution
 param_dist = {'colsample_bytree': [0.64, 0.65, 0.66],
                 'reg_alpha': uniform(1, 1.2),
